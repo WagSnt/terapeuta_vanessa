@@ -1,0 +1,384 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /*about-me*/
+  .about-me {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-me > .about-me-text {
+    order: 1;
+  }
+  .about-me > .about-me-img {
+    order: 2;
+    padding-top: 30px;
+  }
+
+  .desperte > .desperte-text > .h3{
+    font-size: 31px;
+  }
+
+  /*atendimentos*/
+  .atendimentos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-atendimento {
+    background-color: transparent;
+    color: var(--strong-brown);
+    width: 450px;
+  }
+  /*Atendimento coletivo*/
+  .coletivo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .space-flex {
+    display: none;
+  }
+
+  .coletivo-text > .h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  /*atendimentos*/
+  .atendimentos > .context > .h5 {
+    max-width: 450px;
+    font-size: 20px;
+  }
+
+  .card-atendimento > img {
+    max-width: 450px;
+    border-radius: 30px;
+  }
+
+  /*ebook*/
+  .ebook {
+    padding: 10px;
+  }
+  .ebook-img > img {
+    width: 430px;
+  }
+
+
+  /*Integre-se*/
+  .container-videos {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  *{
+    font-size: 16px;
+  }
+
+  .home-text {
+    padding: 20px;
+  }
+
+  .home-text > .h1 {
+    font-size: 40px;
+  } 
+
+  .home-text > .h6 {
+    font-size: 14px;
+  } 
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .about-me > .about-me-text {
+    order: 1;
+  }
+
+  .about-me > .about-me-text > .h2 {
+    font-size: 25px;
+  }
+  .about-me > .about-me-img {
+    order: 2;
+    padding-top: 30px;
+  }
+
+  .desperte > .desperte-text > .h3{
+    font-size: 21px;
+    padding: 20px;
+  }
+
+  /*atendimentos*/
+  .atendimentos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-atendimento {
+    background-color: transparent;
+    color: var(--strong-brown);
+    width: 450px;
+  }
+  /*Atendimento coletivo*/
+  .coletivo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .space-flex {
+    display: none;
+  }
+
+  .coletivo-text > .h2 {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+  }
+
+  .coletivo-text > .h3 {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .coletivo-text > .h4 {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+
+  /*atendimentos*/
+  .atendimentos > .context > .h5 {
+    max-width: 450px;
+    font-size: 20px;
+  }
+
+  .card-atendimento > img {
+    max-width: 450px;
+    border-radius: 30px;
+  }
+
+  /*ebook*/
+  .ebook {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .ebook > .ebook-text > .h2 {
+    font-size: 25px;
+  }
+
+  .ebook-img > img {
+    width: 500px;
+  }
+
+
+  /*Integre-se*/
+  .integre-se > .h2 {
+    font-size: 25px;
+  }
+
+  .container-videos {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  *{
+    font-size: 14px;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-img {
+    order: 1;
+    width: 100%;
+  }
+
+  .home-text {
+    order: 2;
+  }
+
+  .home-text > .paragraph {
+    font-size: 14px;
+  }
+
+  .home-text {
+    padding: 20px;
+    width: 300px;
+  }
+
+  .home-text > .h1 {
+    font-size: 55px;
+  } 
+
+  .home-text > .h6 {
+    font-size: 14px;
+  } 
+  
+  .home-text > button {
+    font-size: 14px;
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .about-me > .about-me-text {
+    order: 1;
+    width: 300px;
+    text-align: justify;
+  }
+
+  .about-me > .about-me-text > .h2 {
+    font-size: 22px;
+  }
+  
+  .about-me > .about-me-img {
+    order: 2;
+    padding-top: 30px;
+    width: 350px;
+  }
+
+  .about-me > .about-me-img > img {
+    width: 300px;
+  }
+
+  .desperte {
+    background-image: url("../images/reikiwagner.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    height: 250px;
+  }
+
+  .desperte > .desperte-text > .h3{
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  /*atendimentos*/
+  .atendimentos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-atendimento {
+    background-color: transparent;
+    color: var(--strong-brown);
+    width: 300px;
+  }
+  .card-atendimento > img {
+    width: 300px;
+  }
+
+  .atendimentos > .context > .h5 {
+    width: 300px;
+    font-size: 15px;
+  }
+
+  /*Atendimento coletivo*/
+  .coletivo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .space-flex {
+    display: none;
+  }
+
+  .coletivo {
+    background-image: url("../images/bg-coletivo2t.png");
+    background-position: center bottom;
+    background-size: cover;
+  }
+
+  .coletivo-text {
+    width: 300px;
+  }
+
+  .coletivo-text > .h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+  }
+
+  .coletivo-text > .h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+  }
+
+  .coletivo-text > .h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  /*ebook*/
+  .ebook {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .ebook > .ebook-text > .h2 {
+    font-size: 22px;
+  }
+
+  .ebook-img {
+    width: 300px;
+  }
+
+  .ebook-img > img {
+    width: 400px;
+  }
+
+  .ebook > .ebook-text {
+    width: 300px;
+  }
+
+
+  /*Integre-se*/
+.integre-se > .h2 {
+  font-size: 22px;
+}
+
+  .container-videos {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .container-videos > iframe {
+    width: 300px;
+  }
+
+  footer > p {
+    font-size: 12px;
+    margin: 0px;
+    padding: 10px;
+  }
+  footer > p > a {
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--wine);
+    font-weight: bold;
+  }footer > p > a:hover {
+    color: var(--strong-brown);
+  }
+}
+
