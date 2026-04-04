@@ -797,27 +797,20 @@ strong { font-weight: 600; }
 
   /* Hero */
   .hero {
-    flex-direction: column;
-    height: auto;
+    height: 100svh;
     max-height: none;
-    min-height: 100svh;
+    min-height: 560px;
   }
   .hero-content {
     width: 100%;
-    padding: 7.5rem 1.5rem 2rem;
+    padding: 7.5rem 1.5rem 3rem;
+    align-items: flex-start;
   }
   .hero-text {
     max-width: 100%;
   }
   .hero-image {
-    width: 100%;
-    height: 52vw;
-    min-height: 220px;
-    max-height: 380px;
-  }
-  .hero-image img {
-    border-radius: 70px 70px 0 0;
-    object-position: top;
+    display: none;
   }
 
   /* Sobre */
@@ -877,12 +870,7 @@ strong { font-weight: 600; }
   }
 
   .hero-content {
-    padding: 7rem 1.1rem 2rem;
-  }
-
-  .hero-image {
-    height: 60vw;
-    max-height: 300px;
+    padding: 6.5rem 1.1rem 2.5rem;
   }
 
   .service-body {
