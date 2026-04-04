@@ -40,6 +40,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="leitura/leitura.css">
 
   <!-- Schema.org — Negócio -->
   <script type="application/ld+json">
@@ -140,6 +141,7 @@
         <li><a href="#home"          class="nav-link">Home</a></li>
         <li><a href="#sobre"         class="nav-link">Sobre Mim</a></li>
         <li><a href="#atendimentos"  class="nav-link">Atendimentos</a></li>
+        <li><a href="#" class="nav-link" id="navLinkLeitura" aria-haspopup="dialog">Leitura do Dia</a></li>
         <li><a href="#ebook"         class="nav-link">Ebook</a></li>
         <li><a href="#integre-se"    class="nav-link">Integre-se</a></li>
       </ul>
@@ -210,7 +212,7 @@
       <div class="coletivo-overlay"></div>
       <div class="coletivo-content animate-on-scroll fade-up">
         <h2 class="coletivo-title">Atendimento Coletivo</h2>
-        <p class="coletivo-date">09 de Agosto de 2025</p>
+        <p class="coletivo-date">Abril de 2026</p>
         <h3 class="coletivo-theme">Limpeza do campo emocional</h3>
         <p class="coletivo-text">O objetivo deste atendimento é limpar, harmonizar, reconectar seu campo energético e realizar as ativações de cura necessárias ao grupo. É realizado à distância, portanto de onde você estiver poderá participar. Por ser uma ferramenta livre de dogmas <strong>TODOS PODEM SE BENEFICIAR</strong> deste atendimento que faço com muito amor junto a espiritualidade.</p>
         <a href="https://wa.me/555198725205" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">
@@ -265,6 +267,112 @@
         </div>
       </div>
     </section>
+
+    <!-- Leitura do Dia movida para overlay fora do <main> -->
+
+        <!-- Cabeçalho da seção -->
+        <header class="ldt-header animate-on-scroll fade-up">
+          <span class="ldt-eyebrow">Experiência Espiritual Diária</span>
+          <h2 class="ldt-title">Leitura do Dia</h2>
+          <div class="section-divider"></div>
+          <p class="ldt-subtitle">Deixe as cartas trazerem uma mensagem especial para o seu dia. Gratuita, renovada à meia-noite.</p>
+        </header>
+
+        <!-- Estado: IDLE — verso da carta + botão -->
+        <div class="ldt-panel animate-on-scroll fade-up" id="ldtPanelIdle">
+          <div class="ldt-card-back" aria-hidden="true"></div>
+          <button class="btn btn-emerald ldt-cta" id="ldtBtnReading" type="button">
+            ✦ &nbsp;Receber Minha Leitura
+          </button>
+          <p class="ldt-hint" id="ldtHint">Uma leitura gratuita por dia</p>
+        </div>
+
+        <!-- Estado: LOADING -->
+        <div class="ldt-panel ldt-panel--loading" id="ldtPanelLoading" hidden aria-live="polite" aria-label="Gerando sua leitura">
+          <div class="ldt-spinner" role="status"></div>
+          <p class="ldt-loading-text">As cartas estão se revelando para você<span class="ldt-dots" aria-hidden="true"></span></p>
+        </div>
+
+        <!-- Estado: READING — carta revelada + texto da IA -->
+        <div class="ldt-panel" id="ldtPanelReading" hidden>
+          <!-- Carta com flip 3D -->
+          <div class="ldt-card-wrapper">
+            <div class="ldt-card" id="ldtCard" role="img" aria-label="Carta do dia">
+              <div class="ldt-card-face ldt-card-face--back" aria-hidden="true"></div>
+              <div class="ldt-card-face ldt-card-face--front">
+                <span class="ldt-card-suit-icon" id="ldtCardSuitIcon" aria-hidden="true">✦</span>
+                <h3 class="ldt-card-name" id="ldtCardName">—</h3>
+                <span class="ldt-card-position" id="ldtCardPosition">Posição Normal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Texto da leitura + compartilhamento -->
+          <div class="ldt-reading-body" id="ldtReadingBody">
+            <div class="ldt-reading-text" id="ldtReadingText" aria-live="polite"></div>
+
+            <div class="ldt-share">
+              <p class="ldt-share-label">Compartilhar</p>
+              <div class="ldt-share-buttons">
+                <button class="ldt-share-btn ldt-share-btn--whatsapp" id="ldtBtnShareWhatsapp" type="button" aria-label="Compartilhar no WhatsApp">
+                  WhatsApp
+                </button>
+                <button class="ldt-share-btn ldt-share-btn--copy" id="ldtBtnCopy" type="button" aria-label="Copiar texto da leitura">
+                  Copiar texto
+                </button>
+              </div>
+            </div>
+
+            <!-- ADSENSE_BLOCK_POST_READING -->
+            <!-- Espaço reservado para Google AdSense após a leitura (usuários free) -->
+            <!-- COMO ATIVAR: substitua este bloco pelo snippet gerado no painel do AdSense -->
+            <!--
+            <div class="ldt-adsense-slot">
+              <ins class="adsbygoogle"
+                   style="display:block"
+                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                   data-ad-slot="XXXXXXXXXX"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <!-- Estado: LIMITE ATINGIDO -->
+        <div class="ldt-panel ldt-panel--limit" id="ldtPanelLimit" hidden aria-live="polite">
+          <div class="ldt-limit-icon" aria-hidden="true">✦</div>
+          <h3 class="ldt-limit-title">Sua leitura de hoje já foi entregue</h3>
+          <p class="ldt-limit-text">Volte amanhã para receber a próxima mensagem. As cartas estarão esperando por você. 🌙</p>
+          <p class="ldt-next-reset" id="ldtNextReset"></p>
+
+          <!-- ADSENSE_BLOCK_LIMIT_REACHED -->
+          <!-- Espaço reservado para Google AdSense quando o limite diário for atingido -->
+          <!-- COMO ATIVAR: substitua este bloco pelo snippet gerado no painel do AdSense.    -->
+          <!-- Manter o div.ldt-adsense-slot e remover apenas o comentário interno.           -->
+          <!--
+          <div class="ldt-adsense-slot ldt-adsense-limit">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+          -->
+
+          <button class="btn btn-emerald-outline ldt-share-btn" id="ldtBtnShareAgain" type="button" hidden>
+            Compartilhar minha leitura de hoje
+          </button>
+        </div>
+
+        <!-- Estado: ERRO -->
+        <div class="ldt-panel ldt-panel--error" id="ldtPanelError" hidden>
+          <p class="ldt-error-text" id="ldtErrorText">Algo deu errado. Tente novamente em instantes.</p>
+          <button class="btn btn-emerald-outline" id="ldtBtnRetry" type="button">Tentar novamente</button>
+        </div>
 
     <!-- =====================
          BANNER PARALLAX
@@ -327,6 +435,164 @@
   </footer>
 
   <!-- =====================
+       OVERLAY LEITURA DO DIA
+  ===================== -->
+  <div class="ldt-overlay" id="ldtOverlay" hidden
+       role="dialog" aria-modal="true" aria-label="Leitura do Dia">
+
+    <div class="ldt-overlay-inner">
+      <button class="ldt-overlay-close" id="ldtOverlayClose" type="button" aria-label="Fechar Leitura do Dia">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="ldt-container">
+
+        <header class="ldt-header">
+          <span class="ldt-eyebrow">Experiência Espiritual Diária</span>
+          <h2 class="ldt-title">Leitura do Dia</h2>
+          <div class="section-divider"></div>
+          <p class="ldt-subtitle">Deixe as cartas trazerem uma mensagem especial para o seu dia. Gratuita, renovada à meia-noite.</p>
+        </header>
+
+        <!-- Estado: IDLE -->
+        <div class="ldt-panel" id="ldtPanelIdle">
+          <div class="ldt-card-back" aria-hidden="true"></div>
+          <button class="btn btn-emerald ldt-cta" id="ldtBtnReading" type="button">
+            ✦ &nbsp;Receber Minha Leitura
+          </button>
+          <p class="ldt-hint" id="ldtHint">Uma leitura gratuita por dia</p>
+        </div>
+
+        <!-- Estado: LOADING -->
+        <div class="ldt-panel ldt-panel--loading" id="ldtPanelLoading" hidden aria-live="polite">
+          <div class="ldt-spinner" role="status"></div>
+          <p class="ldt-loading-text">As cartas estão se revelando para você<span class="ldt-dots" aria-hidden="true"></span></p>
+        </div>
+
+        <!-- Estado: READING -->
+        <div class="ldt-panel" id="ldtPanelReading" hidden>
+          <div class="ldt-card-wrapper">
+            <div class="ldt-card" id="ldtCard" role="img" aria-label="Carta do dia">
+              <div class="ldt-card-face ldt-card-face--back" aria-hidden="true"></div>
+              <div class="ldt-card-face ldt-card-face--front">
+                <span class="ldt-card-suit-icon" id="ldtCardSuitIcon" aria-hidden="true">✦</span>
+                <h3 class="ldt-card-name" id="ldtCardName">—</h3>
+                <span class="ldt-card-position" id="ldtCardPosition">Posição Normal</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ldt-reading-body" id="ldtReadingBody">
+            <div class="ldt-reading-text" id="ldtReadingText" aria-live="polite"></div>
+            <div class="ldt-share">
+              <p class="ldt-share-label">Compartilhar</p>
+              <div class="ldt-share-buttons">
+                <button class="ldt-share-btn ldt-share-btn--whatsapp" id="ldtBtnShareWhatsapp" type="button">WhatsApp</button>
+                <button class="ldt-share-btn ldt-share-btn--copy"      id="ldtBtnCopy"          type="button">Copiar texto</button>
+              </div>
+            </div>
+            <!-- ADSENSE_BLOCK_POST_READING -->
+            <!--
+            <div class="ldt-adsense-slot">
+              <ins class="adsbygoogle" style="display:block"
+                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+                   data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <!-- Estado: LIMITE ATINGIDO -->
+        <div class="ldt-panel ldt-panel--limit" id="ldtPanelLimit" hidden aria-live="polite">
+          <div class="ldt-limit-icon" aria-hidden="true">✦</div>
+          <h3 class="ldt-limit-title">Sua leitura de hoje já foi entregue</h3>
+          <p class="ldt-limit-text">Volte amanhã para receber a próxima mensagem. As cartas estarão esperando por você. 🌙</p>
+          <p class="ldt-next-reset" id="ldtNextReset"></p>
+          <!-- ADSENSE_BLOCK_LIMIT_REACHED -->
+          <!--
+          <div class="ldt-adsense-slot ldt-adsense-limit">
+            <ins class="adsbygoogle" style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+          -->
+          <button class="btn btn-emerald-outline ldt-share-btn" id="ldtBtnShareAgain" type="button" hidden>
+            Compartilhar minha leitura de hoje
+          </button>
+        </div>
+
+        <!-- Estado: ERRO -->
+        <div class="ldt-panel ldt-panel--error" id="ldtPanelError" hidden>
+          <p class="ldt-error-text" id="ldtErrorText">Algo deu errado. Tente novamente em instantes.</p>
+          <button class="btn btn-emerald-outline" id="ldtBtnRetry" type="button">Tentar novamente</button>
+        </div>
+
+      </div><!-- /ldt-container -->
+
+      <!-- Modal de captura de lead -->
+      <div class="ldt-modal-backdrop" id="ldtModalBackdrop" hidden
+           role="dialog" aria-modal="true" aria-labelledby="ldtModalTitleId">
+        <div class="ldt-modal">
+          <button class="ldt-modal-close" id="ldtModalClose" type="button" aria-label="Fechar">✕</button>
+          <div id="ldtFormWrapper">
+            <h3 class="ldt-modal-title" id="ldtModalTitleId">Continue sua jornada ✦</h3>
+            <p class="ldt-modal-text">Para receber sua leitura todos os dias, me conta um pouco mais sobre você. É rápido e gratuito!</p>
+            <form class="ldt-form" id="ldtFormLead" novalidate>
+              <div class="ldt-field">
+                <label for="ldtFieldName">Seu nome</label>
+                <input type="text" id="ldtFieldName" name="name" placeholder="Como posso te chamar?" required autocomplete="given-name" maxlength="100">
+              </div>
+              <div class="ldt-field">
+                <label for="ldtFieldEmail">Seu e-mail</label>
+                <input type="email" id="ldtFieldEmail" name="email" placeholder="seu@email.com" required autocomplete="email">
+              </div>
+              <div class="ldt-field">
+                <label for="ldtFieldSign">Seu signo solar</label>
+                <select id="ldtFieldSign" name="sign" required>
+                  <option value="" disabled selected>Selecione seu signo</option>
+                  <option value="Áries">Áries ♈</option>
+                  <option value="Touro">Touro ♉</option>
+                  <option value="Gêmeos">Gêmeos ♊</option>
+                  <option value="Câncer">Câncer ♋</option>
+                  <option value="Leão">Leão ♌</option>
+                  <option value="Virgem">Virgem ♍</option>
+                  <option value="Libra">Libra ♎</option>
+                  <option value="Escorpião">Escorpião ♏</option>
+                  <option value="Sagitário">Sagitário ♐</option>
+                  <option value="Capricórnio">Capricórnio ♑</option>
+                  <option value="Aquário">Aquário ♒</option>
+                  <option value="Peixes">Peixes ♓</option>
+                </select>
+              </div>
+              <p class="ldt-form-error" id="ldtFormError" hidden aria-live="assertive"></p>
+              <button type="submit" class="btn btn-emerald ldt-form-submit" id="ldtFormSubmit">
+                Quero receber minha leitura diária ✨
+              </button>
+              <p class="ldt-privacy">Seus dados são usados apenas para personalizar suas leituras. Sem spam, jamais.</p>
+            </form>
+          </div>
+          <div class="ldt-capture-success" id="ldtCaptureSuccess" hidden>
+            <div class="ldt-capture-success-icon">🌟</div>
+            <h4>Olá, <span class="ldt-capture-success-name"></span>!</h4>
+            <p>Você está cadastrada. A partir de amanhã, uma nova leitura aguarda você todos os dias. ✨</p>
+          </div>
+        </div>
+      </div><!-- /ldt-modal-backdrop -->
+
+    </div><!-- /ldt-overlay-inner -->
+  </div><!-- /ldt-overlay -->
+
+  <!-- =====================
+       BOTÃO FLUTUANTE — LEITURA DO DIA
+  ===================== -->
+  <button class="ldt-float-btn" id="ldtFloatBtn" type="button" aria-label="Abrir Leitura do Dia" aria-haspopup="dialog">
+    <span class="ldt-float-icon" aria-hidden="true">✦</span>
+    <span class="ldt-float-label">Leitura</span>
+  </button>
+
+  <!-- =====================
        BOTÃO WHATSAPP
   ===================== -->
   <a href="https://wa.me/555198725205" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale pelo WhatsApp">
@@ -337,5 +603,12 @@
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+
+  <!-- FingerprintJS v4 — open source, sem custo -->
+  <!-- Carregado com defer para não bloquear o render da página -->
+  <script src="https://openfpcdn.io/fingerprintjs/v4/iife.min.js" defer></script>
+
+  <!-- Leitura do Dia -->
+  <script src="leitura/leitura.js" defer></script>
 </body>
 </html>

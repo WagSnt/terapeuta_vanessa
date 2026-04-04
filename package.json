@@ -1,0 +1,16 @@
+{
+  "name": "terapeuta-vanessa",
+  "version": "1.0.0",
+  "description": "Site da terapeuta holística Vanessa Santos com Leitura do Dia via IA",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
+    "openai": "^4.98.0"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
