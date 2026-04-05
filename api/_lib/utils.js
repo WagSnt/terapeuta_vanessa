@@ -59,12 +59,19 @@ export function safeCompare(a, b) {
 
 /**
  * Define headers CORS e Content-Type na resposta.
- * Chamadas são sempre do mesmo domínio Vercel, mas deixamos explícito para facilidade.
+ * Restringe a origem ao domínio de produção (ou ALLOWED_ORIGIN via env).
+ * Em desenvolvimento local, aceita qualquer localhost.
  */
-export function setCORSHeaders(res) {
-  res.setHeader('Access-Control-Allow-Origin',  '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+export function setCORSHeaders(res, req) {
+  const origin        = req?.headers?.origin || ''
+  const allowed       = process.env.ALLOWED_ORIGIN || 'https://nessaterapeuta.vercel.app'
+  const isLocalhost   = /^https?:\/\/localhost(:\d+)?$/.test(origin)
+  const allowedOrigin = (origin === allowed || isLocalhost) ? origin : allowed
+
+  res.setHeader('Access-Control-Allow-Origin',  allowedOrigin)
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-admin-key')
+  res.setHeader('Vary', 'Origin')
   res.setHeader('Content-Type', 'application/json')
 }
 

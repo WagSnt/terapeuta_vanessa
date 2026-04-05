@@ -903,3 +903,310 @@ strong { font-weight: 600; }
     height: 50px;
   }
 }
+
+/* =====================================================
+   LGPD — BANNER DE CONSENTIMENTO DE COOKIES
+===================================================== */
+.lgpd-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  background: var(--emerald-900);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 -4px 40px rgba(0, 0, 0, 0.40);
+  padding: 1.25rem 1.5rem;
+  /* Inicia fora da tela */
+  transform: translateY(100%);
+  transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  display: none; /* js controla */
+}
+
+.lgpd-banner--visible {
+  transform: translateY(0);
+}
+
+.lgpd-banner--hidden {
+  transform: translateY(110%);
+}
+
+.lgpd-banner-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-right: 2rem; /* espaço para o botão ✕ */
+}
+
+.lgpd-banner-text {
+  flex: 1;
+  min-width: 220px;
+  font-size: 0.82rem;
+  color: rgba(250, 252, 249, 0.75);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.lgpd-banner-text strong {
+  color: var(--white);
+}
+
+.lgpd-link {
+  color: var(--emerald-300);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lgpd-link:hover { color: var(--white); }
+
+.lgpd-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.lgpd-btn {
+  white-space: nowrap;
+  font-size: 0.75rem !important;
+  padding: 0.6rem 1.4rem !important;
+}
+
+.lgpd-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.9rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(250, 252, 249, 0.45);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: color var(--ease);
+  line-height: 0;
+}
+
+.lgpd-close:hover { color: var(--white); }
+
+@media (max-width: 600px) {
+  .lgpd-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .lgpd-banner-actions { width: 100%; }
+  .lgpd-btn { flex: 1; text-align: center; }
+}
+
+/* =====================================================
+   YOUTUBE — PRIVACY GATE
+   Exibido quando usuário escolhe "apenas essenciais"
+===================================================== */
+.yt-gate {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--emerald-900);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.yt-gate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.50;
+  display: block;
+}
+
+.yt-gate-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.yt-gate-btn {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+  transition: background var(--ease), transform var(--ease), border-color var(--ease);
+}
+
+.yt-gate-btn:hover {
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.70);
+  transform: scale(1.10);
+}
+
+.yt-gate-note {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* =====================================================
+   RODAPÉ — LINKS LEGAIS
+===================================================== */
+.footer-legal {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.40);
+  transition: color var(--ease);
+}
+
+.footer-legal a:hover { color: var(--emerald-300); }
+
+.footer-sep {
+  color: rgba(255, 255, 255, 0.20);
+  user-select: none;
+}
+
+/* =====================================================
+   PÁGINA DE PRIVACIDADE
+===================================================== */
+.privacy-wrap {
+  padding: 7.5rem 1.5rem 5rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.privacy-wrap h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  color: var(--emerald-800);
+  margin-bottom: 0.35rem;
+  line-height: 1.15;
+}
+
+.privacy-updated {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  opacity: 0.75;
+  margin-bottom: 2.5rem;
+}
+
+.privacy-intro {
+  background: var(--emerald-50);
+  border-left: 3px solid var(--emerald-400);
+  padding: 1.1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+}
+
+.privacy-intro p { margin-bottom: 0; }
+
+.privacy-wrap h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--emerald-700);
+  margin: 2.8rem 0 0.8rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(10, 46, 31, 0.09);
+}
+
+.privacy-wrap h2:first-of-type { border-top: none; padding-top: 0; }
+
+.privacy-wrap p,
+.privacy-wrap li {
+  color: var(--text-mid);
+  font-size: 0.93rem;
+  line-height: 1.82;
+}
+
+.privacy-wrap ul,
+.privacy-wrap ol {
+  padding-left: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-wrap li { margin-bottom: 0.3rem; }
+
+.privacy-wrap strong { color: var(--emerald-800); }
+
+/* Tabela de cookies */
+.privacy-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(10, 46, 31, 0.10);
+}
+
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+  min-width: 540px;
+}
+
+.privacy-table th {
+  background: var(--emerald-50);
+  color: var(--emerald-800);
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--emerald-200);
+  white-space: nowrap;
+}
+
+.privacy-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(10, 46, 31, 0.07);
+  color: var(--text-mid);
+  vertical-align: top;
+}
+
+.privacy-table tr:last-child td { border-bottom: none; }
+
+.privacy-table tr:nth-child(even) td { background: rgba(235, 248, 242, 0.40); }
+
+/* Caixa de contato */
+.privacy-contact-box {
+  background: var(--emerald-50);
+  border: 1px solid var(--emerald-200);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin-top: 1rem;
+}
+
+.privacy-contact-box p { margin-bottom: 0.4rem; }
+.privacy-contact-box p:last-child { margin-bottom: 0; }
+.privacy-contact-box a { color: var(--emerald-600); font-weight: 500; }
+.privacy-contact-box a:hover { color: var(--emerald-800); text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .privacy-wrap { padding: 6rem 1.25rem 4rem; }
+}

@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A2E1F">
 
   <!-- SEO Básico -->
   <title>Vanessa Santos | Terapeuta Energética, Taróloga e Oraculista — Rio Grande do Sul</title>
-  <meta name="description" content="Vanessa Santos — Terapeuta Energética, Taróloga e Oraculista. Mestre Reiki, Radiestesista, Mesa Radiônica, Barras de Access e mais. Atendimento presencial no RS e online para todo o Brasil.">
-  <meta name="keywords" content="terapeuta holística, taróloga, oraculista, reiki, terapias energéticas, Rio Grande do Sul, autoconhecimento, espiritualidade, Vanessa Santos, limpeza energética, mesa radiônica, barras de access, cone hindu">
+  <meta name="description" content="Vanessa Santos — Terapeuta Energética, Taróloga e Oraculista no RS. Mestre Reiki, Mesa Radiônica, Barras de Access, Cone Hindu, Radiestesia e Leitura de Oráculos. Agende presencial ou online.">
+  <meta name="keywords" content="terapeuta holística RS, taróloga Rio Grande do Sul, oraculista, reiki mestre, terapias energéticas, autoconhecimento, espiritualidade, Vanessa Santos terapeuta, limpeza energética, mesa radiônica, barras de access, cone hindu, radiestesia, atendimento espiritual online">
   <meta name="author" content="Vanessa Santos">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://nessaterapeuta.vercel.app">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://nessaterapeuta.vercel.app/">
+
+  <!-- Geolocalização -->
+  <meta name="geo.region" content="BR-RS">
+  <meta name="geo.placename" content="Rio Grande do Sul, Brasil">
+  <meta name="language" content="pt-BR">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -20,27 +26,41 @@
   <meta property="og:title" content="Vanessa Santos | Terapeuta Energética, Taróloga e Oraculista">
   <meta property="og:description" content="Bem-vindo à jornada de autoconhecimento, autoamor e conexão. Terapias Holísticas, Reiki, Leitura de Oráculos e muito mais. Atendimento no RS e online.">
   <meta property="og:image" content="https://nessaterapeuta.vercel.app/images/img-about-me.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Vanessa Santos — Terapeuta Energética e Oraculista">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@vanessa__sanntos">
+  <meta name="twitter:creator" content="@vanessa__sanntos">
   <meta name="twitter:title" content="Vanessa Santos | Terapeuta Energética, Taróloga e Oraculista">
   <meta name="twitter:description" content="Bem-vindo à jornada de autoconhecimento, autoamor e conexão. Terapias Holísticas, Reiki, Oráculos e muito mais.">
   <meta name="twitter:image" content="https://nessaterapeuta.vercel.app/images/img-about-me.png">
+  <meta name="twitter:image:alt" content="Vanessa Santos — Terapeuta Energética e Oraculista">
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
 
-  <!-- Google Fonts -->
+  <!-- Performance: pré-conexões críticas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+  <link rel="dns-prefetch" href="https://i.ytimg.com">
+  <link rel="dns-prefetch" href="https://wa.me">
+
+  <!-- Performance: pré-carregamento do hero (imagem LCP) -->
+  <link rel="preload" as="image" href="images/new-home.jpg" fetchpriority="high">
+
+  <!-- Google Fonts com display=swap (já incluso na URL) -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="leitura/leitura.css">
+  <!-- LEITURA DO DIA — desabilitada temporariamente; descomentar na próxima versão -->
+  <!-- <link rel="stylesheet" href="leitura/leitura.css"> -->
 
   <!-- Schema.org — Negócio -->
   <script type="application/ld+json">
@@ -121,6 +141,62 @@
     ]
   }
   </script>
+
+  <!-- Schema.org — WebPage (SEO de página) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Vanessa Santos | Terapeuta Energética, Taróloga e Oraculista",
+    "description": "Vanessa Santos — Terapeuta Energética, Taróloga e Oraculista no RS. Mestre Reiki, Mesa Radiônica, Barras de Access, Cone Hindu, Radiestesia e Leitura de Oráculos.",
+    "url": "https://nessaterapeuta.vercel.app/",
+    "inLanguage": "pt-BR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Vanessa Santos — Terapeuta Energética",
+      "url": "https://nessaterapeuta.vercel.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nessaterapeuta.vercel.app/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  }
+  </script>
+
+  <!-- Schema.org — FAQ (perguntas frequentes implícitas nos serviços) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é a Consulta com os Oráculos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Leitura de Cartas é para quem busca clareza e confiança. Através da consulta, olhamos para o inconsciente, acessando o que pode estar confuso e reconectando com sua voz interior para um caminho de melhores possibilidades."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que são as Terapias Energéticas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As Terapias Energéticas tratam o campo mental, emocional, físico e espiritual. Incluem Reiki, Barras de Access, Mesa Radiônica, Cone Hindu e limpezas espirituais, investigando a origem dos desequilíbrios para uma transformação interna profunda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O Atendimento Coletivo é presencial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O Atendimento Coletivo é realizado à distância, portanto qualquer pessoa de qualquer lugar do Brasil pode participar. É uma limpeza e harmonização do campo energético realizada com amor e espiritualidade."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -138,12 +214,13 @@
       </button>
 
       <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#home"          class="nav-link">Home</a></li>
-        <li><a href="#sobre"         class="nav-link">Sobre Mim</a></li>
-        <li><a href="#atendimentos"  class="nav-link">Atendimentos</a></li>
-        <li><a href="#" class="nav-link" id="navLinkLeitura" aria-haspopup="dialog">Leitura do Dia</a></li>
-        <li><a href="#ebook"         class="nav-link">Ebook</a></li>
-        <li><a href="#integre-se"    class="nav-link">Integre-se</a></li>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre Mim</a></li>
+        <li><a href="#atendimentos" class="nav-link">Atendimentos</a></li>
+        <!-- LEITURA DO DIA — nav item desabilitado; reativar na próxima versão -->
+        <!-- <li><a href="#" class="nav-link" id="navLinkLeitura" aria-haspopup="dialog">Leitura do Dia</a></li> -->
+        <li><a href="#ebook" class="nav-link">Ebook</a></li>
+        <li><a href="#integre-se" class="nav-link">Integre-se</a></li>
       </ul>
     </nav>
   </header>
@@ -166,7 +243,7 @@
         </a>
       </div>
       <div class="hero-image animate-on-scroll fade-right">
-        <img src="images/new-home.jpg" alt="Vanessa Santos — Terapeuta Energética e Oraculista" loading="eager">
+        <img src="images/new-home.jpg" alt="Vanessa Santos — Terapeuta Energética e Oraculista" loading="eager" fetchpriority="high" width="640" height="800" decoding="async">
       </div>
     </section>
 
@@ -189,16 +266,16 @@
         <p>Cada pessoa traz consigo um tesouro e habilidades únicas (acredite ela ou não), cada história está sendo lapidada a cada passo do caminho. Então se você também escolher ir além e superar seus desafios será uma honra fazer parte da tua jornada!</p>
 
         <div class="about-social">
-          <a href="https://www.facebook.com/nessa.terapeuta"            target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://www.facebook.com/nessa.terapeuta" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <img src="images/facebook.png"  alt="Facebook">
           </a>
-          <a href="https://www.instagram.com/vanessa__sanntos/"         target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/vanessa__sanntos/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <img src="images/instagram.png" alt="Instagram">
           </a>
           <a href="https://www.youtube.com/channel/UC0QISuqH4_guc0hrS5dlR_w" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
             <img src="images/youtube.png"   alt="YouTube">
           </a>
-          <a href="https://www.tiktok.com/@vanessa__sanntos"            target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@vanessa__sanntos" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <img src="images/tiktok.png"    alt="TikTok">
           </a>
         </div>
@@ -289,7 +366,7 @@
         <h2 class="section-title">Voltando a ser você</h2>
         <div class="section-divider"></div>
         <p>Este livro é o início da jornada para quem deseja soltar as antigas crenças, padrões e medos. Aqui vamos colocar em prática o desenvolvimento do autoconhecimento para que as camadas de dor, insegurança, tristeza entre outras comecem a se dissolver, e você possa simplesmente ser e viver a sua verdade.</p>
-        <a href="https://pay.hotmart.com/X102075916D?off=wdbacvk8&bid=1775326935258&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAQ-NihleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaepRPtLsi1ejPQ_oddAyHn_kKjZrCfp5J5u-ljQurwj8SBX83kWUh4xFAILNw_aem_TGxyz8FGDjb5pajgaYV9Lw" class="btn btn-emerald" target="_blank">
+        <a href="https://pay.hotmart.com/X102075916D?off=wdbacvk8&bid=1775326935258&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAQ-NihleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaepRPtLsi1ejPQ_oddAyHn_kKjZrCfp5J5u-ljQurwj8SBX83kWUh4xFAILNw_aem_TGxyz8FGDjb5pajgaYV9Lw" class="btn btn-emerald" target="_blank" rel="noopener noreferrer">
           Adquirir agora
         </a>
       </div>
@@ -324,10 +401,10 @@
         <p class="channel-subtitle animate-on-scroll fade-up">Aqui é um espaço para você que busca expandir seu conhecimento, sua consciência, sua energia de forma mais profunda e criar uma nova realidade de acordo com aquilo que é verdadeiro para você!</p>
 
         <div class="videos-grid animate-on-scroll fade-up">
-          <iframe src="https://www.youtube.com/embed/U7wmKVmWBYg" title="Canal Integre-se — Vídeo 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          <iframe src="https://www.youtube.com/embed/nHFdf_FUncw" title="Canal Integre-se — Vídeo 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          <iframe src="https://www.youtube.com/embed/DAko2mZM55E" title="Canal Integre-se — Vídeo 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          <iframe src="https://www.youtube.com/embed/8ShGoS7HqtQ" title="Canal Integre-se — Vídeo 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/U7wmKVmWBYg" title="Canal Integre-se — Vídeo 1" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/nHFdf_FUncw" title="Canal Integre-se — Vídeo 2" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/DAko2mZM55E" title="Canal Integre-se — Vídeo 3" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/8ShGoS7HqtQ" title="Canal Integre-se — Vídeo 4" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
 
         <div class="channel-cta animate-on-scroll fade-up">
@@ -345,8 +422,15 @@
   ===================== -->
   <footer class="footer">
     <p>© 2026 · Desenvolvido por <a href="https://wa.me/5551995583905" target="_blank" rel="noopener noreferrer">Wagner Alexandre dos Santos</a></p>
+    <nav class="footer-legal" aria-label="Links legais">
+      <a href="privacidade.html">Política de Privacidade</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="privacidade.html#cookies">Política de Cookies</a>
+    </nav>
   </footer>
 
+  <!-- LEITURA DO DIA — overlay desabilitado; usar <template> preserva código c/ comentários aninhados; reativar na próxima versão -->
+  <template id="ldt-overlay-disabled">
   <!-- =====================
        OVERLAY LEITURA DO DIA
   ===================== -->
@@ -504,6 +588,7 @@
   <button class="ldt-float-btn" id="ldtFloatBtn" type="button" aria-label="Abrir Leitura do Dia" aria-haspopup="dialog">
     <span class="ldt-float-icon" aria-hidden="true">✦</span>
   </button>
+  </template><!-- /ldt-overlay-disabled -->
 
   <!-- =====================
        BOTÃO WHATSAPP
@@ -514,14 +599,32 @@
     </svg>
   </a>
 
+  <!-- =====================
+       LGPD — BANNER DE CONSENTIMENTO
+  ===================== -->
+  <div class="lgpd-banner" id="lgpdBanner"
+       role="dialog" aria-modal="false" aria-label="Aviso de privacidade e cookies"
+       aria-hidden="true" style="display:none">
+    <div class="lgpd-banner-inner">
+      <p class="lgpd-banner-text">
+        <strong>Privacidade &amp; Cookies</strong> — Usamos armazenamento local para funcionalidades como a Leitura do Dia e incorporamos vídeos do YouTube, que podem usar cookies de terceiros. Saiba mais em nossa <a href="privacidade.html" class="lgpd-link">Política de Privacidade</a>.
+      </p>
+      <div class="lgpd-banner-actions">
+        <button class="btn btn-emerald lgpd-btn" id="lgpdBtnAll" type="button">Aceitar tudo</button>
+        <button class="btn btn-emerald-outline lgpd-btn" id="lgpdBtnEssential" type="button">Apenas essenciais</button>
+      </div>
+    </div>
+    <button class="lgpd-close" id="lgpdBtnClose" type="button" aria-label="Fechar (aceitar apenas essenciais)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/cookies.js" defer></script>
 
-  <!-- FingerprintJS v4 — open source, sem custo -->
-  <!-- Carregado com defer para não bloquear o render da página -->
-  <script src="https://openfpcdn.io/fingerprintjs/v4/iife.min.js" defer></script>
-
-  <!-- Leitura do Dia -->
-  <script src="leitura/leitura.js" defer></script>
+  <!-- LEITURA DO DIA — scripts desabilitados; reativar na próxima versão -->
+  <!-- <script src="https://openfpcdn.io/fingerprintjs/v4/iife.min.js" defer></script> -->
+  <!-- <script src="leitura/leitura.js" defer></script> -->
 </body>
 </html>

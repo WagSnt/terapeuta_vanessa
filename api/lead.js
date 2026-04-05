@@ -6,7 +6,7 @@ import { getSupabase }  from './_lib/supabase.js'
 import { setCORSHeaders, VALID_SIGNS } from './_lib/utils.js'
 
 export default async function handler(req, res) {
-  setCORSHeaders(res)
+  setCORSHeaders(res, req)
 
   if (req.method === 'OPTIONS') return res.status(200).end()
   if (req.method !== 'POST')    return res.status(405).json({ error: 'METHOD_NOT_ALLOWED' })
