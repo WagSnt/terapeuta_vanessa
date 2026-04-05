@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"console.log\\('ADMIN_KEY='+require\\('crypto'\\).randomBytes\\(32\\).toString\\('hex'\\)\\); console.log\\('FINGERPRINT_SALT='+require\\('crypto'\\).randomBytes\\(32\\).toString\\('hex'\\)\\)\")",
+      "Bash(python3 -c \"import secrets; print\\('ADMIN_KEY='+secrets.token_hex\\(32\\)\\); print\\('FINGERPRINT_SALT='+secrets.token_hex\\(32\\)\\)\")",
+      "Bash(powershell -Command \"[System.BitConverter]::ToString\\([System.Security.Cryptography.RandomNumberGenerator]::GetBytes\\(32\\)\\).Replace\\('-',''\\).ToLower\\(\\); [System.BitConverter]::ToString\\([System.Security.Cryptography.RandomNumberGenerator]::GetBytes\\(32\\)\\).Replace\\('-',''\\).ToLower\\(\\)\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\projetos_claude\\\\terapeuta_vanessa\\\\genkeys.ps1\")"
+    ]
+  }
+}
