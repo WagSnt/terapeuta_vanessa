@@ -382,8 +382,7 @@
     // Formulário de cadastro
     $('ldtFormLead')?.addEventListener('submit', submitLead)
 
-    // Fechar modal de lead
-    $('ldtModalClose')?.addEventListener('click', closeLeadModal)
+    // Fechar modal de lead (backdrop click ou Escape)
     $('ldtModalBackdrop')?.addEventListener('click', function (e) {
       if (e.target === this) closeLeadModal()
     })

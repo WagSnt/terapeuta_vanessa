@@ -653,6 +653,16 @@ strong { font-weight: 600; }
   margin-bottom: 2rem;
 }
 
+.ebook--paid {
+  background: var(--emerald-50);
+  flex-direction: row-reverse;
+}
+
+.ebook-label--paid {
+  background: rgba(196, 147, 90, 0.12);
+  color: #8a5c1e;
+}
+
 /* =====================================================
    CANAL INTEGRE-SE
 ===================================================== */

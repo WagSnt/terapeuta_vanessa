@@ -233,7 +233,7 @@
 
           <article class="service-card animate-on-scroll fade-up">
             <div class="service-image">
-              <img src="images/img-consulta.jpg" alt="Consulta com os Oráculos — Leitura de Cartas" loading="lazy">
+              <img src="images/consulta%20oraculos.jpg" alt="Consulta com os Oráculos — Leitura de Cartas" loading="lazy">
             </div>
             <div class="service-body">
               <h3>Consulta com os Oráculos</h3>
@@ -247,7 +247,7 @@
 
           <article class="service-card animate-on-scroll fade-up">
             <div class="service-image">
-              <img src="images/img-energeticas.jpg" alt="Atendimento com Terapias Energéticas" loading="lazy">
+              <img src="images/terapiaenergetica.jpg" alt="Atendimento com Terapias Energéticas" loading="lazy">
             </div>
             <div class="service-body">
               <h3>Atendimento com Terapias Energéticas</h3>
@@ -268,112 +268,6 @@
       </div>
     </section>
 
-    <!-- Leitura do Dia movida para overlay fora do <main> -->
-
-        <!-- Cabeçalho da seção -->
-        <header class="ldt-header animate-on-scroll fade-up">
-          <span class="ldt-eyebrow">Experiência Espiritual Diária</span>
-          <h2 class="ldt-title">Leitura do Dia</h2>
-          <div class="section-divider"></div>
-          <p class="ldt-subtitle">Deixe as cartas trazerem uma mensagem especial para o seu dia. Gratuita, renovada à meia-noite.</p>
-        </header>
-
-        <!-- Estado: IDLE — verso da carta + botão -->
-        <div class="ldt-panel animate-on-scroll fade-up" id="ldtPanelIdle">
-          <div class="ldt-card-back" aria-hidden="true"></div>
-          <button class="btn btn-emerald ldt-cta" id="ldtBtnReading" type="button">
-            ✦ &nbsp;Receber Minha Leitura
-          </button>
-          <p class="ldt-hint" id="ldtHint">Uma leitura gratuita por dia</p>
-        </div>
-
-        <!-- Estado: LOADING -->
-        <div class="ldt-panel ldt-panel--loading" id="ldtPanelLoading" hidden aria-live="polite" aria-label="Gerando sua leitura">
-          <div class="ldt-spinner" role="status"></div>
-          <p class="ldt-loading-text">As cartas estão se revelando para você<span class="ldt-dots" aria-hidden="true"></span></p>
-        </div>
-
-        <!-- Estado: READING — carta revelada + texto da IA -->
-        <div class="ldt-panel" id="ldtPanelReading" hidden>
-          <!-- Carta com flip 3D -->
-          <div class="ldt-card-wrapper">
-            <div class="ldt-card" id="ldtCard" role="img" aria-label="Carta do dia">
-              <div class="ldt-card-face ldt-card-face--back" aria-hidden="true"></div>
-              <div class="ldt-card-face ldt-card-face--front">
-                <span class="ldt-card-suit-icon" id="ldtCardSuitIcon" aria-hidden="true">✦</span>
-                <h3 class="ldt-card-name" id="ldtCardName">—</h3>
-                <span class="ldt-card-position" id="ldtCardPosition">Posição Normal</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Texto da leitura + compartilhamento -->
-          <div class="ldt-reading-body" id="ldtReadingBody">
-            <div class="ldt-reading-text" id="ldtReadingText" aria-live="polite"></div>
-
-            <div class="ldt-share">
-              <p class="ldt-share-label">Compartilhar</p>
-              <div class="ldt-share-buttons">
-                <button class="ldt-share-btn ldt-share-btn--whatsapp" id="ldtBtnShareWhatsapp" type="button" aria-label="Compartilhar no WhatsApp">
-                  WhatsApp
-                </button>
-                <button class="ldt-share-btn ldt-share-btn--copy" id="ldtBtnCopy" type="button" aria-label="Copiar texto da leitura">
-                  Copiar texto
-                </button>
-              </div>
-            </div>
-
-            <!-- ADSENSE_BLOCK_POST_READING -->
-            <!-- Espaço reservado para Google AdSense após a leitura (usuários free) -->
-            <!-- COMO ATIVAR: substitua este bloco pelo snippet gerado no painel do AdSense -->
-            <!--
-            <div class="ldt-adsense-slot">
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                   data-ad-slot="XXXXXXXXXX"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-            -->
-          </div>
-        </div>
-
-        <!-- Estado: LIMITE ATINGIDO -->
-        <div class="ldt-panel ldt-panel--limit" id="ldtPanelLimit" hidden aria-live="polite">
-          <div class="ldt-limit-icon" aria-hidden="true">✦</div>
-          <h3 class="ldt-limit-title">Sua leitura de hoje já foi entregue</h3>
-          <p class="ldt-limit-text">Volte amanhã para receber a próxima mensagem. As cartas estarão esperando por você. 🌙</p>
-          <p class="ldt-next-reset" id="ldtNextReset"></p>
-
-          <!-- ADSENSE_BLOCK_LIMIT_REACHED -->
-          <!-- Espaço reservado para Google AdSense quando o limite diário for atingido -->
-          <!-- COMO ATIVAR: substitua este bloco pelo snippet gerado no painel do AdSense.    -->
-          <!-- Manter o div.ldt-adsense-slot e remover apenas o comentário interno.           -->
-          <!--
-          <div class="ldt-adsense-slot ldt-adsense-limit">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-          </div>
-          -->
-
-          <button class="btn btn-emerald-outline ldt-share-btn" id="ldtBtnShareAgain" type="button" hidden>
-            Compartilhar minha leitura de hoje
-          </button>
-        </div>
-
-        <!-- Estado: ERRO -->
-        <div class="ldt-panel ldt-panel--error" id="ldtPanelError" hidden>
-          <p class="ldt-error-text" id="ldtErrorText">Algo deu errado. Tente novamente em instantes.</p>
-          <button class="btn btn-emerald-outline" id="ldtBtnRetry" type="button">Tentar novamente</button>
-        </div>
-
     <!-- =====================
          BANNER PARALLAX
     ===================== -->
@@ -383,7 +277,26 @@
     </div>
 
     <!-- =====================
-         EBOOK
+         EBOOK PAGO — VOLTANDO A SER VOCÊ
+    ===================== -->
+    <section class="ebook ebook--paid" id="ebook-voltando">
+      <div class="ebook-image animate-on-scroll fade-right">
+        <img src="images/voltandoservc.png" alt="Ebook Voltando a ser você — Vanessa Santos" loading="lazy">
+      </div>
+
+      <div class="ebook-content animate-on-scroll fade-left">
+        <span class="ebook-label ebook-label--paid">Ebook</span>
+        <h2 class="section-title">Voltando a ser você</h2>
+        <div class="section-divider"></div>
+        <p>Este livro é o início da jornada para quem deseja soltar as antigas crenças, padrões e medos. Aqui vamos colocar em prática o desenvolvimento do autoconhecimento para que as camadas de dor, insegurança, tristeza entre outras comecem a se dissolver, e você possa simplesmente ser e viver a sua verdade.</p>
+        <a href="https://pay.hotmart.com/X102075916D?off=wdbacvk8&bid=1775326935258&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcAQ-NihleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaepRPtLsi1ejPQ_oddAyHn_kKjZrCfp5J5u-ljQurwj8SBX83kWUh4xFAILNw_aem_TGxyz8FGDjb5pajgaYV9Lw" class="btn btn-emerald" target="_blank">
+          Adquirir agora
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================
+         EBOOK GRATUITO — DESPERTE PARA SUA ENERGIA
     ===================== -->
     <section class="ebook" id="ebook">
       <div class="ebook-image animate-on-scroll fade-left">
@@ -391,7 +304,7 @@
       </div>
 
       <div class="ebook-content animate-on-scroll fade-right">
-        <span class="ebook-label">Ebook</span>
+        <span class="ebook-label">Ebook Gratuito</span>
         <h2 class="section-title">Desperte Para Sua Energia</h2>
         <div class="section-divider"></div>
         <p>Compreender o que seu corpo sinaliza é o ponto de partida para identificar quais emoções estão acumuladas ou reprimidas aí dentro de você. O conhecimento de como seu corpo, suas emoções e sua energia funcionam juntos te trará uma visão diferente e mais ampla para se auto observar e fazer escolhas mais saudáveis em todos os aspectos.</p>
@@ -440,10 +353,12 @@
   <div class="ldt-overlay" id="ldtOverlay" hidden
        role="dialog" aria-modal="true" aria-label="Leitura do Dia">
 
+    <!-- Botão fechar: position fixed acima do modal backdrop -->
+    <button class="ldt-overlay-close" id="ldtOverlayClose" type="button" aria-label="Fechar Leitura do Dia">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
     <div class="ldt-overlay-inner">
-      <button class="ldt-overlay-close" id="ldtOverlayClose" type="button" aria-label="Fechar Leitura do Dia">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
 
       <div class="ldt-container">
 
@@ -535,7 +450,6 @@
       <div class="ldt-modal-backdrop" id="ldtModalBackdrop" hidden
            role="dialog" aria-modal="true" aria-labelledby="ldtModalTitleId">
         <div class="ldt-modal">
-          <button class="ldt-modal-close" id="ldtModalClose" type="button" aria-label="Fechar">✕</button>
           <div id="ldtFormWrapper">
             <h3 class="ldt-modal-title" id="ldtModalTitleId">Continue sua jornada ✦</h3>
             <p class="ldt-modal-text">Para receber sua leitura todos os dias, me conta um pouco mais sobre você. É rápido e gratuito!</p>
@@ -589,7 +503,6 @@
   ===================== -->
   <button class="ldt-float-btn" id="ldtFloatBtn" type="button" aria-label="Abrir Leitura do Dia" aria-haspopup="dialog">
     <span class="ldt-float-icon" aria-hidden="true">✦</span>
-    <span class="ldt-float-label">Leitura</span>
   </button>
 
   <!-- =====================

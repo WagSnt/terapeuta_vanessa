@@ -52,28 +52,28 @@
   align-items: center;
 }
 
-/* Botão de fechar o overlay */
+/* Botão de fechar o overlay — fixo, acima de tudo (z-index > modal backdrop) */
 .ldt-overlay-close {
-  position: sticky;
+  position: fixed;
   top: 1.25rem;
-  /* alinha à direita dentro do ldt-overlay-inner */
-  align-self: flex-end;
-  margin-bottom: -42px; /* não empurra o conteúdo */
-  z-index: 10;
+  right: 1.25rem;
+  z-index: 1300;
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background var(--ease), color var(--ease), transform var(--ease);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .ldt-overlay-close:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.22);
   color: var(--white);
   transform: scale(1.08);
 }
@@ -81,18 +81,16 @@
 /* ── Botão flutuante Leitura do Dia ──────────────────────── */
 .ldt-float-btn {
   position: fixed;
-  /* WhatsApp: bottom 2rem, height 56px → topo em calc(2rem + 56px) = ~120px.
-     Adicionamos 1rem de gap → bottom: calc(2rem + 56px + 1rem) */
+  /* Empilhado acima do WhatsApp (bottom 2rem + height 56px + 1rem gap) */
   bottom: calc(2rem + 56px + 1rem);
   right: 2rem;
   z-index: 800;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  justify-content: center;
   width: 56px;
-  padding: 0.6rem 0.3rem 0.45rem;
-  border-radius: 50px;
+  height: 56px;
+  border-radius: 50%;
   background: linear-gradient(160deg, var(--emerald-700) 0%, var(--emerald-900) 100%);
   border: 1px solid rgba(196, 147, 90, 0.45);
   color: var(--white);
@@ -107,19 +105,10 @@
 }
 
 .ldt-float-icon {
-  font-size: 1.3rem;
-  color: rgba(196, 147, 90, 0.9);
+  font-size: 1.45rem;
+  color: rgba(196, 147, 90, 0.95);
   line-height: 1;
   animation: ldt-float 3.5s ease-in-out infinite;
-}
-
-.ldt-float-label {
-  font-size: 0.6rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1;
 }
 
 @media (max-width: 480px) {
@@ -127,6 +116,7 @@
     bottom: calc(1.25rem + 50px + 1rem);
     right: 1.25rem;
     width: 50px;
+    height: 50px;
   }
 }
 
@@ -543,7 +533,7 @@
   position: fixed;
   inset: 0;
   z-index: 1200;
-  background: rgba(10, 46, 31, 0.80);
+  background: rgba(6, 26, 16, 0.96);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
