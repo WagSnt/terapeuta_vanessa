@@ -60,11 +60,6 @@
 
   navOverlay.addEventListener('click', closeMenu);
 
-  // Fechar ao clicar em qualquer link
-  document.querySelectorAll('.nav-link').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
-
   // Fechar com tecla Escape
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && navLinks.classList.contains('open')) {
@@ -74,6 +69,7 @@
 
   /* ===================================================
      NAVEGAÇÃO SUAVE — SCROLL COM OFFSET DO HEADER
+     Também fecha o menu mobile antes de rolar
   =================================================== */
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -84,10 +80,24 @@
       if (!target) return;
 
       e.preventDefault();
-      const offset = header.offsetHeight;
-      const top    = target.getBoundingClientRect().top + window.scrollY - offset;
 
-      window.scrollTo({ top: top, behavior: 'smooth' });
+      const menuWasOpen = navLinks.classList.contains('open');
+      if (menuWasOpen) closeMenu();
+
+      function doScroll() {
+        const offset = header.offsetHeight;
+        const top    = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+
+      if (menuWasOpen) {
+        // Aguarda dois frames para o browser processar a remoção do overflow:hidden
+        requestAnimationFrame(function () {
+          requestAnimationFrame(doScroll);
+        });
+      } else {
+        doScroll();
+      }
     });
   });
 

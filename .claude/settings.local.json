@@ -4,7 +4,26 @@
       "Bash(node -e \"console.log\\('ADMIN_KEY='+require\\('crypto'\\).randomBytes\\(32\\).toString\\('hex'\\)\\); console.log\\('FINGERPRINT_SALT='+require\\('crypto'\\).randomBytes\\(32\\).toString\\('hex'\\)\\)\")",
       "Bash(python3 -c \"import secrets; print\\('ADMIN_KEY='+secrets.token_hex\\(32\\)\\); print\\('FINGERPRINT_SALT='+secrets.token_hex\\(32\\)\\)\")",
       "Bash(powershell -Command \"[System.BitConverter]::ToString\\([System.Security.Cryptography.RandomNumberGenerator]::GetBytes\\(32\\)\\).Replace\\('-',''\\).ToLower\\(\\); [System.BitConverter]::ToString\\([System.Security.Cryptography.RandomNumberGenerator]::GetBytes\\(32\\)\\).Replace\\('-',''\\).ToLower\\(\\)\")",
-      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\projetos_claude\\\\terapeuta_vanessa\\\\genkeys.ps1\")"
+      "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\projetos_claude\\\\terapeuta_vanessa\\\\genkeys.ps1\")",
+      "Bash(grep -E \"\\\\.\\(jpg|jpeg|png|gif|svg|webp|heic\\)$\")",
+      "Bash(npm --version)",
+      "Bash(cmd /c \"node --version && npm --version\")",
+      "Bash(cmd /c \"node -v\")",
+      "Bash(cmd /c \"npm -v\")",
+      "Bash(where node.exe)",
+      "Bash(where npm.cmd)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/**)",
+      "Bash(winget --version)",
+      "Bash(powershell.exe -Command \"node --version\")",
+      "Bash(powershell.exe -Command \"Get-Command deno,bun,volta -ErrorAction SilentlyContinue | Select-Object Name,Source\")",
+      "Bash(\"/c/Program Files/Adobe/Adobe Creative Cloud Experience/libs/node.exe\" --version)",
+      "Bash(powershell.exe -Command \"winget install OpenJS.NodeJS.LTS --silent --accept-package-agreements --accept-source-agreements\")",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(npm install:*)",
+      "Bash(npm list:*)",
+      "Bash(node scripts/optimize-images.mjs)"
     ]
   }
 }

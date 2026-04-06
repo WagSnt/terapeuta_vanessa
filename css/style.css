@@ -50,6 +50,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -439,6 +440,11 @@ strong { font-weight: 600; }
   align-items: center;
   justify-content: flex-end;
   background-image: url('../images/bg-coletivo2t.png');
+  background-image: image-set(
+    url('../images/bg-coletivo2t.avif') type('image/avif'),
+    url('../images/bg-coletivo2t.webp') type('image/webp'),
+    url('../images/bg-coletivo2t.png')  type('image/png')
+  );
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
@@ -577,6 +583,11 @@ strong { font-weight: 600; }
   align-items: center;
   justify-content: center;
   background-image: url('../images/reikiwagner-1900.jpg');
+  background-image: image-set(
+    url('../images/reikiwagner-1900.avif') type('image/avif'),
+    url('../images/reikiwagner-1900.webp') type('image/webp'),
+    url('../images/reikiwagner-1900.jpg')  type('image/jpeg')
+  );
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -784,7 +795,7 @@ strong { font-weight: 600; }
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     height: 100vh;
     width: 280px;
     background: var(--emerald-900);
@@ -792,12 +803,13 @@ strong { font-weight: 600; }
     justify-content: center;
     align-items: center;
     gap: 2.8rem;
-    transition: right var(--ease-slow);
+    transform: translateX(100%);
+    transition: transform var(--ease-slow);
     z-index: 1000;
     padding: 2rem;
   }
   .nav-links.open {
-    right: 0;
+    transform: translateX(0);
   }
   .nav-overlay {
     display: none;
