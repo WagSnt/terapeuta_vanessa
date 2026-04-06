@@ -47,14 +47,7 @@
     navToggle.classList.remove('open');
     navToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
-
-    // Aguarda a transição antes de tirar do fluxo
-    navOverlay.addEventListener('transitionend', function handler() {
-      if (!navOverlay.classList.contains('open')) {
-        navOverlay.style.display = 'none';
-      }
-      navOverlay.removeEventListener('transitionend', handler);
-    });
+    navOverlay.style.display = 'none';
   }
 
   navToggle.addEventListener('click', function () {

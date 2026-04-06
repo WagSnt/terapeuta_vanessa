@@ -289,10 +289,12 @@ strong { font-weight: 600; }
   background: rgba(0, 0, 0, 0.55);
   z-index: 950;
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--ease-slow);
 }
 .nav-overlay.open {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* =====================================================
@@ -798,7 +800,7 @@ strong { font-weight: 600; }
     right: 0;
   }
   .nav-overlay {
-    display: block;
+    display: none;
   }
   .nav-link {
     font-size: 0.9rem;
